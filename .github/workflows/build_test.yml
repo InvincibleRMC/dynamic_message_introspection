@@ -52,7 +52,7 @@ jobs:
         with:
           path: ${{ env.CLONE_PATH }}
       - name: Build and test
-        uses: ros-tooling/action-ros-ci@v0.3.9
+        uses: ros-tooling/action-ros-ci@0.4.8
         with:
           package-name: dynmsg dynmsg_demo dynmsg_msgs test_dynmsg
           target-ros2-distro: ${{ matrix.ros_distribution }}
