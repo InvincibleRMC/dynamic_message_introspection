@@ -24,14 +24,6 @@ find_package(rcl_action REQUIRED)
 find_package(yaml_cpp_vendor REQUIRED)
 find_package(yaml-cpp REQUIRED)
 
-if(TARGET yaml-cpp)
-  set(YAML_CPP_TARGET yaml-cpp)
-elseif(TARGET yaml-cpp::yaml-cpp)
-  set(YAML_CPP_TARGET yaml-cpp::yaml-cpp)
-else()
-  message(FATAL_ERROR "Could not find yaml-cpp CMake target")
-endif()
-
 include_directories(include)
 add_library(dynmsg_demo_library STATIC
   src/cli.cpp
