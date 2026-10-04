@@ -42,13 +42,13 @@ add_library(dynmsg STATIC
   src/string_utils.cpp
   src/yaml_utils.cpp
 )
-ament_target_dependencies(dynmsg
-  rcutils
-  rosidl_runtime_c
-  rosidl_runtime_cpp
-  rosidl_typesupport_introspection_c
-  rosidl_typesupport_introspection_cpp
-  yaml_cpp_vendor
+target_link_libraries(dynmsg PUBLIC
+  rcutils::rcutils
+  rosidl_runtime_c::rosidl_runtime_c
+  rosidl_runtime_cpp::rosidl_runtime_cpp
+  rosidl_typesupport_introspection_c::rosidl_typesupport_introspection_c
+  rosidl_typesupport_introspection_cpp::rosidl_typesupport_introspection_cpp
+  yaml-cpp
 )
 target_include_directories(dynmsg PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
